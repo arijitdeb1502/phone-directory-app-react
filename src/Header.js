@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Header.css';
 
-const Header = ()=>{
-    
-    // const headerStyle = {
-    //     textAlign: 'center',
-    //     padding: 20,
-    //     background: '#000',
-    //     color: '#fff',
-    //     textTransform: 'uppercase'
-    // };
+// const Header = (props)=>{
 
-    return(
-        <div className='header'>
-            Phone Directory
-        </div>
-    )
+//     return(
+//         <div className='header'>
+//             {props.heading}
+//         </div>
+//     )
+// }
+class Header extends Component {
+    render(){
+        return(
+            <div className='header'>
+                {this.props.heading}
+            </div>
+        )
+    }
 }
 
 export default Header;
