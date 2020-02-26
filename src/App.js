@@ -6,7 +6,29 @@ class App extends Component {
 
   constructor(){
     super();
-    this.handleDelete=this.handleDelete.bind(this,'TEST');  
+    this.handleDelete=this.handleDelete.bind(this,'TEST'); 
+    this.state = {
+      subscriberList: []
+    } 
+  }
+
+  componentDidMount(){
+    
+    let subscriber1 = {
+          id: 1,
+          name: "Arijit Deb",
+          phone: 98582504
+    }
+
+    let subscriberListToShow = [];
+    subscriberListToShow.push(subscriber1);
+
+    this.setState(()=>{
+        return({
+          subscriberList: subscriberListToShow
+        })
+    })
+
   }
 
   handleDelete(arg){
@@ -14,18 +36,23 @@ class App extends Component {
   }
 
   render() {
-    let subscribers = [
-      {
-        id: 1,
-        name: "Arijit Deb",
-        phone: 98582504
-      },
-      {
-        id: 2,
-        name: "Auritra Deb",
-        phone: 98582503
-      }
-    ]
+
+
+    // let subscribers = [
+    //   {
+    //     id: 1,
+    //     name: "Arijit Deb",
+    //     phone: 98582504
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Auritra Deb",
+    //     phone: 98582503
+    //   }
+    // ]
+
+    let subscribers = this.state.subscriberList;
+
     return (
       <div>
         <Header heading="Phone Directory"/>
